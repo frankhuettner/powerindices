@@ -14,7 +14,6 @@ Copyright 2018 Frank Huettner
    limitations under the License.
 '''
 
-# import itertools
 # from numba import jit   # import numba and uncomment the @jit infront of the function if code is too slow 
 from math import factorial as fac
 import numpy as np
@@ -133,7 +132,7 @@ def number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i):
     return Cwith_i
 
 
-def computePBI(quota,weights,minimalWinningCoalitionSize=1):
+def compute_pbi(quota,weights,minimalWinningCoalitionSize=1):
     ''' input,  int>0, the quota necessary to be winning i.e. a coalition holding W as weights wins if W>=quota
                 list of integers>0, weights of the committee members
         output, list, stores the Penrose Banzhaf index of members with entries 
@@ -158,7 +157,7 @@ def computePBI(quota,weights,minimalWinningCoalitionSize=1):
     return PBI
 
 
-def computeSSI(quota,weights):
+def compute_ssi(quota,weights,minimalWinningCoalitionSize=1):
     ''' input,  int, the quota necessary to be winning i.e. a coalition holding W as weights wins if W>=quota
                 list of integers, weights of the committee members
         output, dict, stores the Shapley Shubik index of members with entries (weight: SSI)
@@ -180,7 +179,7 @@ def computeSSI(quota,weights):
     return SSI
 
     
-def computeCSI(quota,weights):
+def compute_csi(quota,weights,minimalWinningCoalitionSize=1):
     ''' input,  int, the quota necessary to be winning i.e. a coalition holding W as weights wins if W>=quota
                 list of integers, weights of the committee members
         output, dict, stores the Coleman Shapley index of members with entries (weight: CSI)
@@ -198,33 +197,3 @@ def computeCSI(quota,weights):
             for s in range(n-t+1):
                 CSI[i] += CSIfactors[t][s] * Cwith_i[quota:quota+w_i,t].sum(axis=0)
     return CSI
-
-# this example represents the UN security council
-quota,weights = .39, [.7, .7, .7, .7, .7, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1] 
-# quota,weights = 8,[4,4,3,2,1,1]   # a smaller example
-
-# call the functions to compute the respective index
-PBIs = computePBI(quota,weights)
-# PBIs = computePBI(quota,weights,minimalWinningCoalitionSize=4)
-# SSIs = computeSSI(quota,weights)
-# CSIs = computeCSI(quota,weights)
-
-numberDigits = 4
-print('quota: {}'.format(quota))
-
-
-formatspec = '{0:.%df}' % numberDigits
-# print('weight  of i: '+' | '.join([formatspec.format(item) for item in weights]))
-# print('SSI of i:     '+' | '.join([formatspec.format(item) for item in SSIs]))
-# print('CSI of i:     '+' | '.join([formatspec.format(item) for item in CSIs]))
-# print('PBI of i:     '+' | '.join([formatspec.format(item) for item in PBIs]))
-# print('CSI/PBI of i: '+' | '.join([formatspec.format(item) for item in CSIs]))
-
-
-# ##### uncomment the following to get results printed into a file output.txt
-# with open('powerindices_output.txt', 'a') as f:   
-#     f.write('quota: {}'.format(quota)+'\n')
-#     f.write('  weight ,      SSI ,      CSI ,      PSI ,  CSI/PSI \n')
-#     for i in range(len(SSIs)):
-#         f.write(' , '.join(['{0:.6f}'.format(item) for item in [weights[i], SSIs[i],CSIs[i],PBIs[i],CSIs[i]/PBIs[i] ] ])+'\n')
-# # #####
