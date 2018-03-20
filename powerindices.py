@@ -90,7 +90,6 @@ def number_coalitions_weighting_x_having_size_s(quota,weights):
     n = np.shape(W)[0]
     C = np.zeros((Wsum+1,n+1), dtype=int)
     C[Wsum,n]=1
-    D = C.copy()
     # Backward counting filling C[x] for x = quota,...,Wsum
     maxQuWsumcum = np.maximum(quota, Wsum-np.cumsum(W,dtype=int))+W  # maxQuWsumcum = max{quota+W_i,Wsum-Wacc incl i} 
     for i in range(n):
@@ -126,8 +125,10 @@ def number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i):
     ##### we just need the rows x = q,...,Wsum 
     Cwith_i = np.zeros((Wsum+1,n+1), dtype=int)
     Cwith_i[Wsum-w_i+1:Wsum+1,:] = C[Wsum-w_i+1:Wsum+1,:] 
+    if w_i == 0 : 
+        Cwith_i[Wsum,n] = C[Wsum,n] 
     for x in range(Wsum-w_i,quota-1,-1):      # calculate Cwith_i  
-        for s in range(n):
+        for s in range(n-1,-1,-1):
             Cwith_i[x,s]=(C[x,s]-Cwith_i[x+w_i,s+1])
     return Cwith_i
 
@@ -159,12 +160,10 @@ def compute_pbi(quota,weights,minimalWinningCoalitionSize=1):
             PBIs.append(PBI) 
     else: 
         C = number_coalitions_weighting_x_having_size_s(quota,weights)
-        print(C)
         for i in range(n):
             Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i)
             w_i = weights[i]
             PBI = 0
-            if i <= 1 : print('i is ',i,Cwith_i)
             for s in range(minimalWinningCoalitionSize-1,n):
                     PBI += Cwith_i[quota:quota+w_i,s+1].sum(axis=0)            
             PBI += Cwith_i[quota+w_i:Wsum+1,minimalWinningCoalitionSize].sum(axis=0)
