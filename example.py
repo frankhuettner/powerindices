@@ -6,13 +6,14 @@ CORRECT: quota = 51, weigths = [25, 14, 33, 11, 17]
 '''
 
 # This example represents the UN security council.
-quota,weights = 39, [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 
-# quota,weights = 8,[4,4,3,2,1,1]   # a smaller example
+# quota,weights = 39, [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 
+quota,weights = 8,[4,4,3,2,1,1]   # a smaller example
 # quota,weights = 8,[4,0,3,2,1,1]   # a smaller example with a null player
 
 # call the functions to compute the respective index
-PBIs = powerindices.compute_pbi(quota,weights, minimalWinningCoalitionSize=1)
-SSIs = powerindices.compute_ssi(quota,weights)
+# PBIs = powerindices.compute_pbi(quota,weights, minimalWinningCoalitionSize=1)
+SSIs = powerindices.compute_ssi(quota,weights, minimalWinningCoalitionSize=1)
+CSIsmin = powerindices.compute_csi(quota,weights, minimalWinningCoalitionSize=3)
 CSIs = powerindices.compute_csi(quota,weights)
 ## The indices are now stored as lists in the PBIs, SSIs, and CSIs.
 ## We could simply print these list:
@@ -20,17 +21,17 @@ CSIs = powerindices.compute_csi(quota,weights)
 ## but I've prepared a formated output below.
 
 
-
 # Formated output
-numberDigits = 6
+numberDigits = 5
 formatspec = '{0:.%df}' % numberDigits
 print('='*(22 + (len(weights)-1)*(numberDigits+5)))
 print('weight of i  || '+' | '.join([formatspec.format(item) for item in weights]))
 print('-'*(22 + (len(weights)-1)*(numberDigits+5)))
 print('SSI of i     || '+' | '.join([formatspec.format(item) for item in SSIs]))
+print('CSImin i     || '+' | '.join([formatspec.format(item) for item in CSIsmin]))
 print('CSI of i     || '+' | '.join([formatspec.format(item) for item in CSIs]))
-print('PBI of i     || '+' | '.join([formatspec.format(item) for item in PBIs]))
-print('CSI/PBI of i || '+' | '.join([formatspec.format(item) for item in CSIs]))
+# print('PBI of i     || '+' | '.join([formatspec.format(item) for item in PBIs]))
+# print('CSI/PBI of i || '+' | '.join([formatspec.format(item) for item in CSIs]))
 print('='*(22 + (len(weights)-1)*(numberDigits+5)))
 print('(quota: {})'.format(quota))
 
