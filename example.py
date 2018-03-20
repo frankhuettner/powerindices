@@ -24,7 +24,8 @@ CSIs = powerindices.compute_csi(quota,weights)
 numberDigits = 4
 formatspec = '{0:.%df}' % numberDigits
 print('='*(22 + (len(weights)-1)*(numberDigits+5)))
-print('weight  of i || '+' | '.join([formatspec.format(item) for item in weights]))
+print('weight of i  || '+' | '.join([formatspec.format(item) for item in weights]))
+print('-'*(22 + (len(weights)-1)*(numberDigits+5)))
 print('SSI of i     || '+' | '.join([formatspec.format(item) for item in SSIs]))
 print('CSI of i     || '+' | '.join([formatspec.format(item) for item in CSIs]))
 print('PBI of i     || '+' | '.join([formatspec.format(item) for item in PBIs]))

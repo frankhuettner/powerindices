@@ -21,8 +21,8 @@ import numpy as np
 
 # @jit
 def number_coalitions_weighting_x(quota,weights):  
-    ''' input,  number, quota
-                list or tuple of numbers, weight vector, 
+    ''' input,  integers, quota
+                list or tuple of integers, weight vector, 
         output, vector with lenght sum(weights)+1, containing quota many
                 leading zeros 0,...,0 and
                 then the number of coalitions which weight quota,...,sum(weights) 
@@ -50,7 +50,7 @@ def number_coalitions_weighting_x(quota,weights):
 # @jit
 def number_coalitions_weighting_x_having_including_i(quota,weights,C,i):
     ''' input,  number, quota
-                list or tuple of numbers, weight vector
+                list or tuple of integers, weight vector
                 C, a matrix storing number_coalitions_weighting_x_having
                 i, a player
         output, numpy array, i.e. vector with length (sum(weights)+1)  
@@ -75,8 +75,8 @@ def number_coalitions_weighting_x_having_including_i(quota,weights,C,i):
 
 # @jit
 def number_coalitions_weighting_x_having_size_s(quota,weights):
-    ''' input,  number, quota
-                list or tuple of numbers, weight vector 
+    ''' input,  int, quota
+                list or tuple of integers, weight vector 
         output, numpy array, i.e. matrix with dimension (sum(weights)+1) * (len(weights)+1), 
                 containing containing quota many leading 0-rows and 
                 then the number of coalitions which weight x= quota,...,sum(weights) and have size s= 0,...,len(weights) 
@@ -110,8 +110,8 @@ def number_coalitions_weighting_x_having_size_s(quota,weights):
 
 # @jit
 def number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i):
-    ''' input,  number, quota
-                list or tuple of numbers, weight vector
+    ''' input,  int, quota
+                list or tuple of integers, weight vector
                 C, a matrix storing number_coalitions_weighting_x_having_size_s
                 i, a player
         output, numpy array, i.e. matrix with dimension (sum(weights)+1) * (len(weights)+1), 
