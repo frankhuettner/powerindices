@@ -184,6 +184,7 @@ def compute_csi(quota,weights,minimalWinningCoalitionSize=1):
                 list of integers, weights of the committee members
         output, dict, stores the Coleman Shapley index of members with entries (weight: CSI)
     ''' 
+
     n = len(weights)
     Wsum = sum(weights)
     C = number_coalitions_weighting_x_having_size_s(quota,weights)

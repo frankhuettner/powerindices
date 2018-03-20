@@ -1,6 +1,11 @@
-import powerindices
+import powerindices  
 
-# this example represents the UN security council
+''' IMPORTANT: ALL INPUTS MUST BE INTEGERS
+WRONG: quota = .51, weigths = [.25, .14, .33, .11, .17]
+CORRECT: quota = 51, weigths = [25, 14, 33, 11, 17]
+'''
+
+# This example represents the UN security council.
 quota,weights = 39, [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 
 # quota,weights = 8,[4,4,3,2,1,1]   # a smaller example
 
@@ -8,8 +13,12 @@ quota,weights = 39, [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 PBIs = powerindices.compute_pbi(quota,weights)
 SSIs = powerindices.compute_ssi(quota,weights)
 CSIs = powerindices.compute_csi(quota,weights)
-# the indices are now stored as lists in the PBIs, SSIs, and CSIs
-# print(SSIs)
+# The indices are now stored as lists in the PBIs, SSIs, and CSIs.
+# We could simply print these list, but I've prepared a formated output below.
+# print(SSIs)  
+
+
+
 
 # FORMATED OUTPUT
 numberDigits = 4
