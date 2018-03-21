@@ -31,7 +31,10 @@ numpy
 math
 
 ## Used algorithm
+We use an algorithm following the ideas by
 S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
+and the adaptation to the CSI discribed in our paper.
+A straigthforward modification for if the minimal size of a winning coalition is specified allows us to be more efficient, e.g. for calculating the EU Council power distribution.
 
 ## Author
 [Frank Huettner](http:www.frankhuettner.de)
