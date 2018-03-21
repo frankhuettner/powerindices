@@ -27,6 +27,7 @@ No installation. Just copy powerindices.py to where you need it. Run the exmaple
 
 ## Requirements
 numpy
+
 math
 
 ## Used algorithm
