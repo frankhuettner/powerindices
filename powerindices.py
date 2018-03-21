@@ -14,7 +14,7 @@ Copyright 2018 Frank Huettner
    limitations under the License.
 '''
 
-# from numba import jit   # import numba and uncomment the @jit infront of the function if code is too slow 
+# from numba import jit   # import numba and uncomment the @jit infront of the function if code is too slow -- can be around factor 3 for large intergers
 from math import factorial as fac
 import numpy as np
 
