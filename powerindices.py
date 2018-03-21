@@ -193,7 +193,7 @@ def compute_ssi(quota,weights,minimalWinningCoalitionSize=1):
         for s in range(minimalWinningCoalitionSize-1,n):
                 SSI[i] += SSIfactors[s] * Cwith_i[quota:quota+w_i,s+1].sum(axis=0) 
         if minimalWinningCoalitionSize > 1:
-            SSI[i] += SSIfactors[minimalWinningCoalitionSize] \
+            SSI[i] += SSIfactors[minimalWinningCoalitionSize-1] \
                       * Cwith_i[quota+w_i:Wsum+1,minimalWinningCoalitionSize].sum(axis=0)    
     return SSI
 
