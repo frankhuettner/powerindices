@@ -48,7 +48,7 @@ def number_coalitions_weighting_x(quota,weights):
 
 
 # @jit
-def number_coalitions_weighting_x_having_including_i(quota,weights,C,i):
+def number_coalitions_weighting_x_including_i(quota,weights,C,i):
     ''' input,  number, quota
                 list or tuple of integers, weight vector
                 C, a matrix storing number_coalitions_weighting_x_having
@@ -155,7 +155,7 @@ def compute_pbi(quota,weights,minimalWinningCoalitionSize=1):
     if minimalWinningCoalitionSize==1:
         C = number_coalitions_weighting_x(quota,weights)
         for i in range(n):
-            Cwith_i = number_coalitions_weighting_x_having_including_i(quota,weights,C,i)        
+            Cwith_i = number_coalitions_weighting_x_including_i(quota,weights,C,i)        
             PBI = np.sum(Cwith_i[quota:quota+weights[i]])*PBIfactor  
             PBIs.append(PBI) 
     else: 
