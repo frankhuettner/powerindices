@@ -62,7 +62,7 @@ CSIs = powerindices.compute_csi(quota,weights)
 ### Formated output
 numberDigits = 5
 formatspec = '{0:.%df}' % (numberDigits)
-print('(quota: {}, sum of CSI/sum of PBI: {:.5f})'.format(quota,sum(CSIs)/sum(PBIs)))
+print('(quota: {}, sum of CSI: {:.5f}, sum of PBI: {:.5f})'.format(quota,sum(CSIs),sum(PBIs)))
 print('   weight  ||    SSI |     CSI |     PSI |  CSI/PSI \n')
 for i in range(len(SSIs)):
     print('{:10d} ||'.format(weights[i]) + ' | '.join([formatspec.format(item) for item in [SSIs[i],CSIs[i],PBIs[i],CSIs[i]/PBIs[i] ] ])+'\n')
