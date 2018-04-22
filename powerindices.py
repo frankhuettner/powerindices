@@ -28,18 +28,18 @@ def number_coalitions_weighting_x(quota,weights):
                 then the number of coalitions which weight quota,...,sum(weights) 
                 i.e. whose members have weights summing up to x = quota,...,sum(weights)
     ''' 
-    W = np.array(weights, dtype=int)
+    W = np.array(weights, dtype=np.int64)
     n = np.shape(W)[0]
     Wsum = np.sum(W)
-    C = np.zeros(Wsum+1, dtype=int)
+    C = np.zeros(Wsum+1, dtype=np.int64)
     # Backward counting filling C[x] for x = quota,...,Wsum 
     C[Wsum]=1
-    maxQuWsumcum = np.maximum(quota, Wsum-np.cumsum(W,dtype=int))+W  # maxQuWsumcum = max{quota+W_i,Wsum-Wacc incl i} 
+    maxQuWsumcum = np.maximum(quota, Wsum-np.cumsum(W,dtype=np.int64))+W  # maxQuWsumcum = max{quota+W_i,Wsum-Wacc incl i} 
     for i in range(n):
         C[maxQuWsumcum[i]-W[i]:Wsum+1-W[i]] += C[maxQuWsumcum[i]:Wsum+1]
     # Forward counting filling C[x] for x = 0,...,quota-1 
     # C[0]=1            
-    # minQuWcum = np.minimum(quota, np.cumsum(W,dtype=int)) 
+    # minQuWcum = np.minimum(quota, np.cumsum(W,dtype=np.int64)) 
     # for i in range(n):
     #     W_i=W[i]
     #     for x in range(minQuWcum[i],W_i-1,-1):
@@ -60,7 +60,7 @@ def number_coalitions_weighting_x_including_i(quota,weights,C,i):
     n = len(weights)
     Wsum = sum(weights) 
     w_i = weights[i]            
-    Cwith_i = np.zeros(Wsum+1, dtype=int)
+    Cwith_i = np.zeros(Wsum+1, dtype=np.int64)
     ###### Cwith_i[x] = number of coalitions with i weighting x 
     ##### we just need the entries for x = q,...,Wsum but could compute the others with the commented code below
     Cwith_i[Wsum-w_i+1:Wsum+1] = C[Wsum-w_i+1:Wsum+1] 
@@ -85,20 +85,20 @@ def number_coalitions_weighting_x_having_size_s(quota,weights):
                 C[10][4] = 5 means there are 5 coalition that weight 10 and have size 4 ({4411},{4321},{4321},{4321},{4321})   
                 uncomment code at the end to also get C[3][2] = 2 means there are 2 coalition that weight 3 and have size 2 ({12},{12})  
     ''' 
-    W = np.array(weights, dtype=int)
+    W = np.array(weights, dtype=np.int64)
     Wsum = np.sum(W)
     n = np.shape(W)[0]
-    C = np.zeros((Wsum+1,n+1), dtype=int)
+    C = np.zeros((Wsum+1,n+1), dtype=np.int64)
     C[Wsum,n]=1
     # Backward counting filling C[x] for x = quota,...,Wsum
-    maxQuWsumcum = np.maximum(quota, Wsum-np.cumsum(W,dtype=int))+W  # maxQuWsumcum = max{quota+W_i,Wsum-Wacc incl i} 
+    maxQuWsumcum = np.maximum(quota, Wsum-np.cumsum(W,dtype=np.int64))+W  # maxQuWsumcum = max{quota+W_i,Wsum-Wacc incl i} 
     for i in range(n):
         C[maxQuWsumcum[i]-W[i]:Wsum+1-W[i],:n] += C[maxQuWsumcum[i]:Wsum+1,1:n+1]
 
         # for s in range(n,0,-1):
         #         C[maxQuWsumcum[i]-W[i]:Wsum+1-W[i],s-1] += C[maxQuWsumcum[i]:Wsum+1,s]
     # Forward counting filling C[x,s] for x = 0,...,quota-1 
-    # minWaccQ = np.minimum(quota, np.cumsum(W,dtype=int)) 
+    # minWaccQ = np.minimum(quota, np.cumsum(W,dtype=np.int64)) 
     # for i in range(n):
     #     W_i=W[i]
     #     for x in range(minWaccQ[i],W_i-1,-1):
@@ -123,7 +123,7 @@ def number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i):
     w_i = weights[i]            
     ##### Cwith_i[x,s] stores the number of coalitions with i weighting x having size s
     ##### we just need the rows x = q,...,Wsum 
-    Cwith_i = np.zeros((Wsum+1,n+1), dtype=int)
+    Cwith_i = np.zeros((Wsum+1,n+1), dtype=np.int64)
     Cwith_i[Wsum-w_i+1:Wsum+1,:] = C[Wsum-w_i+1:Wsum+1,:] 
     if w_i == 0 : 
         Cwith_i[Wsum,n] = C[Wsum,n] 
