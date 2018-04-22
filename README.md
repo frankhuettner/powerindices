@@ -23,7 +23,9 @@ Also, the powerindices for the EU Council can be computed computable: the quota 
 
 
 ## Installation
-No installation. Just copy powerindices.py to where you need it. Run the exmaple.py file in the same directory if you want to test it.
+0) If you haven't installed python yet, get it from https://www.anaconda.com/download/. After installation, you can start the application Spyder which is a convinient tool to start work with. 
+1) No installation of the powerindices package is necessary. Just copy powerindices.py to your workfolder and use the command `import powerindices`. For instance, if you have the example.py file in the same directory as the powerindices.py file, you can just execute example.py. In the example.py, you further see how to call the functions that compute the indices.
+
 
 ## Requirements
 numpy
@@ -31,9 +33,8 @@ numpy
 math
 
 ## Used algorithm
-We use an algorithm following the ideas by
-
-S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
+We use an algorithm following that counts the number of swings of a voter, see e.g.,
+> S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
 and the adaptation to the CSI discribed in our paper.
 
 A simple modification for if the minimal size of a winning coalition is specified allows us to be more efficient, e.g. for calculating the EU Council power distribution.
