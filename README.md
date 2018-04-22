@@ -24,8 +24,7 @@ Also, the powerindices for the EU Council can be computed computable: the quota 
 
 ## Installation
 0) If you haven't installed python yet, get it from https://www.anaconda.com/download/. After installation, you can start the application Spyder which is a convinient tool to start with. 
-1) No installation of the powerindices package is necessary. Just copy powerindices.py to your workfolder and use the command `import powerindices`. For instance, if you have the example.py file in the same directory as the powerindices.py file, you can just run example.py. In the example.py, you further see how to call the functions that compute the indices.
-
+1) No installation of the powerindices package necessary: Just copy powerindices.py and example.py into the same folder. Open example.py. There you see how the command `import powerindices` allows to use the function to compute the indices. If you run the example.py, it will run the computation for the UN Security Council.
 
 ## Requirements
 numpy
