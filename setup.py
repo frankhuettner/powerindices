@@ -52,7 +52,7 @@ setup(
 
     keywords='Shapley value Shapley Shubik index Banzhaf Penrose Coleman Power index computation',  # Optional
 
-    py_modules=["powerindices"]), 
+    py_modules=["powerindices"], 
 
     install_requires=['numpy','math'],  
 
