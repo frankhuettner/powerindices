@@ -12,19 +12,19 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description_from_md ='\n' + f.read()
 
 setup(
     name='powerindices',  
 
-    version='0.1rc1',  
+    version='1.5rc1',  
 
     description='This package computes the following powerindices for weighted voting games: Penrose Banzhaf index, Shapley Shubik index, and Coleman Shapley index.',  # Required
 
-    long_description=long_description, 
+    long_description=long_description_from_md,
 
-    long_description_content_type='text/markdown',  
+    long_description_content_type='text/x-rst',
 
     url='https://github.com/frankhuettner/powerindices',  
 
@@ -32,17 +32,17 @@ setup(
 
     author_email='info@frankhuettner.de', 
 
-    classifiers=[  # Optional
+    classifiers=[  
 
         'Development Status :: 4 - Beta',
 
-        'Intended Audience :: Researchers',
+        'Intended Audience :: Science/Research',
         
+        'Topic :: Sociology',
         'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Cooperative Game Theory',
-        'Topic :: Scientific/Engineering :: Cooperative Game Theory :: Computation of Powerindices',
+        'Topic :: Scientific/Engineering :: Mathematics',
 
-        'License :: OSI Approved :: Apache License 2.0',
+        'License :: OSI Approved :: Apache Software License',
 
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
