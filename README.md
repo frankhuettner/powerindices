@@ -16,12 +16,10 @@ SSI: https://en.wikipedia.org/wiki/Shapley%E2%80%93Shubik_power_index
 CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf) by [André Casajus](http:www.casajus.de) and [Frank Huettner](http:www.frankhuettner.de)
 
 
-
 ## Examples
 This [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) offers some examples, e.g. the powerindices for the UN Security Council. To this end, the quota is set to 39 and the weights are [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], where the veto powers have 7 and the nonpermanent members have weight 1. 
 
 Also, the powerindices for the EU Council can be computed computable: the quota is 65% of the population and the weight of every country is the population of this country. Moreover, the minimal size of a winning coalition must be specified: setting minimalWinningCoalitionSize=16 ensures that only coalitions with at least 16 members (i.e., 55% of the countries) are winning.
-
 
 ## Installation
 If you haven't installed python yet, get it from https://www.anaconda.com/download/. After installation, you can start the application Spyder which is a convinient tool to start with. 
