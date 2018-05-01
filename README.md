@@ -1,5 +1,4 @@
-# powerindices:
-This package computes 
+powerindices: This package computes 
 the Penrose Banzhaf index (PBI), 
 the Shapley Shubik index (SSI), and 
 the Coleman Shapley index (CSI)
