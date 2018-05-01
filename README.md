@@ -35,6 +35,7 @@ math
 ## Used algorithm
 We use an algorithm following that counts the number of swings of a voter, see e.g.,
 > S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
+
 > A. Casajus and F. Huettner: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested'](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf)
 
 
