@@ -18,7 +18,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='powerindices',  
 
-    version='0.1',  
+    version='0.1rc1',  
 
     description='This package computes the following powerindices for weighted voting games: Penrose Banzhaf index, Shapley Shubik index, and Coleman Shapley index.',  # Required
 
