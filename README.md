@@ -31,12 +31,13 @@ numpy
 
 math
 
+
 ## Used algorithm
 We use an algorithm following that counts the number of swings of a voter, see e.g.,
 > S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
-and the adaptation to the CSI discribed in our paper.
+> A. Casajus and F. Huettner: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested'](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf)
 
-A simple modification for if the minimal size of a winning coalition is specified allows us to be more efficient, e.g. for calculating the EU Council power distribution.
+
 
 ## Author
 [Frank Huettner](http:www.frankhuettner.de)
