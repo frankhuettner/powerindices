@@ -1,8 +1,8 @@
 # README powerindices
 This package computes 
-the Penrose Banzhaf index (PBI), 
-the Shapley Shubik index (SSI), and 
-the Coleman Shapley index (CSI)
+the **Penrose Banzhaf index (PBI)**, 
+the **Shapley Shubik index (SSI)**, and 
+the **Coleman Shapley index (CSI)**
 for weighted voting games. 
 Both, quota and weights must be **integers**.
 Moreover, it is possible to give an optional arguemnent: the minimal size of a winning coalition.
@@ -61,7 +61,7 @@ This can be computed as well: the quota is 65% of the population and the weight 
 You can use this tool from within R by help of [reticulate](https://github.com/rstudio/reticulate). To this end,
 * Install the package *powerindices* in your python environment running the command `pip install powerindices` in your terminal.
 * Install [reticulate](https://github.com/rstudio/reticulate).
-* Call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis
+* Call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis`
     ```
     library(reticulate)
     powerindices <- import("powerindices")
