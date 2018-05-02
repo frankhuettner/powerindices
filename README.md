@@ -1,4 +1,4 @@
-# powerindices
+# README powerindices
 This package computes 
 the Penrose Banzhaf index (PBI), 
 the Shapley Shubik index (SSI), and 
@@ -20,12 +20,9 @@ CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Inte
 This [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) offers some examples. 
 ### The powerindices for the UN Security Council
 Here, the quota is set to 39 and 
-
 the weights are [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
-
 where the veto powers have 7 and the nonpermanent members have weight 1. 
-
-Alternatively, set quota = 5, weights = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0] and minimalWinningCoalitionSize=16.
+Alternatively, set quota = 5, weights = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0] and minimalWinningCoalitionSize=10.
 
 ### The powerindices for the EU Council 
 Can be computed as well: the quota is 65% of the population and the weight of every country is the population of this country. Moreover, the minimal size of a winning coalition must be specified: setting `minimalWinningCoalitionSize=16` ensures that only coalitions with at least 16 members (i.e., 55% of the countries) are winning.
