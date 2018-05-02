@@ -64,8 +64,8 @@ You can use this tool from within R by help of [reticulate](https://github.com/r
 * Call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis
     ```
     library(reticulate)
-    powi <- import("powerindices")
-    csis <-powi$compute_csi(39L,c(7L, 7L, 7L, 7L, 7L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L))
+    powerindices <- import("powerindices")
+    csis <-powerindices$compute_csi(39L,c(7L, 7L, 7L, 7L, 7L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L))
     ```
 ## Requirements
 You need to have numpy and math. I did not put it into the setup.py requirements because this seems to bring trouble. Both packages are standard and come with anaconda.
