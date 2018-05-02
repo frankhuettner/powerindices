@@ -16,13 +16,13 @@ from codecs import open
 #     long_description_from_md ='\n' + f.read()
 
 long_description = """
-It's a pain to manage multiple readme files, so please go to the (https://github.com/frankhuettner/powerindices)[GitHub page] for further information. 
+It's cumbersome to manage multiple readme files, so please go to the [GitHub page](https://github.com/frankhuettner/powerindices) for further information. 
 """
 
 setup(
     name='powerindices',  
 
-    version='1.0.1',  
+    version='1.0.2',  
 
     description='This package computes the following powerindices for weighted voting games: Penrose Banzhaf index, Shapley Shubik index, and Coleman Shapley index.',  # Required
 
