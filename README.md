@@ -15,15 +15,13 @@ SSI: https://en.wikipedia.org/wiki/Shapley%E2%80%93Shubik_power_index
 
 CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf) by [André Casajus](http:www.casajus.de) and [Frank Huettner](http:www.frankhuettner.de)
 
-
-
 ## Installation
 If you haven't installed python yet, get it, e.g. from https://www.anaconda.com/download/. 
 
-*Option 1)* It's just one file, so installation of the powerindices package necessary: 
-..* Just download and copy powerindices.py and example.py into the same folder. 
-..* Open example.py, e.g. using the application *Spyder* that comes with *Anaconda*.
-..* There you see how the command `import powerindices` allows to use the functions to compute the indices if powerindices.py is in the same folder. If you run the example.py, it will run the computation for the UN Security Council.
+*Option 1)* It's just one file, so that an installation of the powerindices package isn't actually necessary: 
+* Just download and copy powerindices.py and example.py into the same folder. 
+* Open example.py, e.g. using the application *Spyder* that comes with *Anaconda*.
+* There you see how the command `import powerindices` allows to use the functions to compute the indices if powerindices.py is in the same folder. If you run the example.py, it will run the computation for the UN Security Council.
 
 *Option 2)* To install the tool, run `pip install powerindices` in your terminal. If you use anaconda, run the command in the [Anaconda Promt](https://www.quora.com/How-do-I-start-the-anaconda-command-prompt).
 
@@ -61,9 +59,9 @@ This can be computed as well: the quota is 65% of the population and the weight 
 
 ## Usage from within R
 You can use this tool from within R by help of [reticulate](https://github.com/rstudio/reticulate). To this end,
-* Install the package *powerindices* in your python environment running the command `pip install powerindices` in your terminal
-* Install [reticulate](https://github.com/rstudio/reticulate) 
-* call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis
+* Install the package *powerindices* in your python environment running the command `pip install powerindices` in your terminal.
+* Install [reticulate](https://github.com/rstudio/reticulate).
+* Call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis
     ```
     library(reticulate)
     powi <- import("powerindices")
@@ -74,9 +72,9 @@ You need to have numpy and math. I did not put it into the setup.py requirements
 
 ## Used algorithm
 We use an algorithm following that counts the number of swings of a voter, see e.g.,
-> S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443))
+> S. Kurz: Computing the Power Distribution in the IMF ([arXiv](http://arxiv.org/abs/1603.01443)).
 
-> A. Casajus and F. Huettner: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested'](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf)
+> A. Casajus and F. Huettner: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested'](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf).
 
 ## Author
 [Frank Huettner](http:www.frankhuettner.de)
