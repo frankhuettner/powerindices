@@ -28,6 +28,18 @@ Option 1) No installation of the powerindices package necessary: Just copy power
 
 Option 2) To install the tool, run `pip install powerindices`
 
+## Usage
+
+### From within R
+You can use this tool from within R by help of [reticulate](https://github.com/rstudio/reticulate). To this end,
+* Install the package *powerindices* in your python environment running the command `pip install powerindices in your terminal
+* Install [reticulate](https://github.com/rstudio/reticulate) 
+* call the package *powerindices* from within R and make sure to send integers, e.g., the following will store the CSIs for the UN Security Council in the list `csis
+    ```
+    library(reticulate)
+    powi <- import("powerindices")
+    csis <-powi$compute_csi(39L,c(7L, 7L, 7L, 7L, 7L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L))
+    ```
 ## Requirements
 You need to have numpy and math. I did not put it into the setup.py requirements because this seems to bring trouble.
 
