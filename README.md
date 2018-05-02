@@ -49,9 +49,9 @@ Alternatively, set quota = 5, weights = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0], and pas
 import powerindices
 quota,weights = 5, [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0] 
 # call the functions compute_pbi, compute_csi, or compute_SSi to compute the corresponding index
-PBIs = powerindices.compute_pbi(quota,weights,minimalWinningCoalitionSize=10)
-SSIs = powerindices.compute_ssi(quota,weights,minimalWinningCoalitionSize=10)
-CSIs = powerindices.compute_csi(quota,weights,minimalWinningCoalitionSize=10)
+PBIs = powerindices.compute_pbi(quota,weights,minimalWinningCoalitionSize=9)
+SSIs = powerindices.compute_ssi(quota,weights,minimalWinningCoalitionSize=9)
+CSIs = powerindices.compute_csi(quota,weights,minimalWinningCoalitionSize=9)
 ```
 
 #### The powerindices for the EU Council 
