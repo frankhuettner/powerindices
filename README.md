@@ -53,7 +53,7 @@ SSIs = powerindices.compute_ssi(quota,weights,minimalWinningCoalitionSize=9)
 CSIs = powerindices.compute_csi(quota,weights,minimalWinningCoalitionSize=9)
 ```
 
-#### The powerindices for the EU Council 
+#### The powerindices for the EU Council (needs to be uncommented)
 This can be computed as well: the quota is 65% of the population and the weight of every country is the population of this country. Moreover, the minimal size of a winning coalition must be specified: setting `minimalWinningCoalitionSize=16` ensures that only coalitions with at least 16 members (i.e., 55% of the countries) are winning. For details, see the [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) file.
 
 ## Usage from within R
