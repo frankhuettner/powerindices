@@ -18,12 +18,11 @@ CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Inte
 ## Installation
 If you haven't installed python yet, get it, e.g. from https://www.anaconda.com/download/. 
 
-*Option 1)* It's just one file, so that an installation of the powerindices package isn't actually necessary: 
-* Just download and copy powerindices.py and example.py into the same folder. 
-* Open example.py, e.g. using the application *Spyder* that comes with *Anaconda*.
-* There you see how the command `import powerindices` allows to use the functions to compute the indices if powerindices.py is in the same folder. If you run the example.py, it will run the computation for the UN Security Council.
+*Option 1*: To install the tool, run `pip install powerindices` in your terminal. If you use anaconda, run the command in the [Anaconda Promt](https://www.quora.com/How-do-I-start-the-anaconda-command-prompt).
 
-*Option 2)* To install the tool, run `pip install powerindices` in your terminal. If you use anaconda, run the command in the [Anaconda Promt](https://www.quora.com/How-do-I-start-the-anaconda-command-prompt).
+*Option 2 (without installation)*: It's just one file, so that an installation of the powerindices package isn't actually necessary: Just download the repository and copy powerindices.py to your working folder.  (Or have the files example.py and powerindices.py in the same folder. If you run the example.py, then it will run the computation for the UN Security Council.)
+
+
 
 ## Usage
 This [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) offers the following examples. 
