@@ -43,7 +43,7 @@ print(CSIs)
 ```
 Here, the quota is set to 39 and the weights are [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
 where the veto powers are thought to have 7 and the nonpermanent members have weight 1. 
-Alternatively, set quota = 5, weights = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0], and pass the optional argument `minimalWinningCoalitionSize=10`:
+Alternatively, set quota = 5, weights = [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0], and pass the optional argument `minimalWinningCoalitionSize=9`:
 ```
 import powerindices
 quota,weights = 5, [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0] 
