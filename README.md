@@ -20,7 +20,7 @@ If you haven't installed python yet, get it, e.g. from https://www.anaconda.com/
 
 *Option 1*: To install the tool, run `pip install powerindices` in your terminal. If you use anaconda, run the command in the [Anaconda Promt](https://www.quora.com/How-do-I-start-the-anaconda-command-prompt).
 
-*Option 2 (without installation)*: It's just one file, so that an installation of the powerindices package isn't actually necessary: Just download the repository and copy powerindices.py to your working folder.  (Or have the files example.py and powerindices.py in the same folder. If you run the example.py, then it will run the computation for the UN Security Council.)
+*Option 2 (without installation)*: It's just one file, so that an installation of the powerindices package isn't actually necessary: Just download the repository and copy powerindices.py to your working folder.  (Or have the files example.py and powerindices.py in the same folder. Then, running the example.py will compute the indices for the UN Security Council.)
 
 
 
