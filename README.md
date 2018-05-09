@@ -61,7 +61,7 @@ CSIs = powerindices.compute_csi(quota,weights,minimalWinningCoalitionSize=9)
 This can be computed as well: the quota is 65% of the population and the weight of every country is the population of this country. Moreover, the minimal size of a winning coalition must be specified: setting `minimalWinningCoalitionSize=16` ensures that only coalitions with at least 16 members (i.e., 55% of the countries) are winning. For details, see the [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) file.
 
 ## Usage from within R
-[Installation guide available on youtube ](https://youtu.be/FaBoGmkD30g)<a href="https://youtu.be/FaBoGmkD30g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
+[Small demonstration available on youtube ](https://youtu.be/FaBoGmkD30g)<a href="https://youtu.be/FaBoGmkD30g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
 
 You can use this tool from within R by help of [reticulate](https://github.com/rstudio/reticulate). To this end,
 * Install the package *powerindices* in your python environment running the command `pip install powerindices` in your terminal.
