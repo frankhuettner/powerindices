@@ -15,7 +15,9 @@ SSI: https://en.wikipedia.org/wiki/Shapley%E2%80%93Shubik_power_index
 
 CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf) by [André Casajus](http:www.casajus.de) and [Frank Huettner](http:www.frankhuettner.de)
 
-## Installation
+## Installation 
+[Installation guide available on youtube ](https://youtu.be/EiXbVHV78Ik)<a href="https://youtu.be/EiXbVHV78Ik"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
+
 If you haven't installed python yet, get it, e.g. from https://www.anaconda.com/download/. 
 
 *Option 1*: To install the tool, run `pip install powerindices` in your terminal. If you use anaconda, run the command in the [Anaconda Promt](https://www.quora.com/How-do-I-start-the-anaconda-command-prompt).
@@ -27,6 +29,8 @@ If you haven't installed python yet, get it, e.g. from https://www.anaconda.com/
 ## Usage
 This [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) offers the following examples. 
 #### The powerindices for the UN Security Council
+[Basic tutorial available on youtube ](https://youtu.be/WNEkgr5Nx38)<a href="https://youtu.be/WNEkgr5Nx38"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
+
 ```
 import powerindices
 quota,weights = 39, [7, 7, 7, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 
@@ -57,6 +61,8 @@ CSIs = powerindices.compute_csi(quota,weights,minimalWinningCoalitionSize=9)
 This can be computed as well: the quota is 65% of the population and the weight of every country is the population of this country. Moreover, the minimal size of a winning coalition must be specified: setting `minimalWinningCoalitionSize=16` ensures that only coalitions with at least 16 members (i.e., 55% of the countries) are winning. For details, see the [example.py](https://github.com/frankhuettner/powerindices/blob/master/example.py) file.
 
 ## Usage from within R
+[Installation guide available on youtube ](https://youtu.be/FaBoGmkD30g)<a href="https://youtu.be/FaBoGmkD30g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
+
 You can use this tool from within R by help of [reticulate](https://github.com/rstudio/reticulate). To this end,
 * Install the package *powerindices* in your python environment running the command `pip install powerindices` in your terminal.
 * Install [reticulate](https://github.com/rstudio/reticulate).
