@@ -13,7 +13,7 @@ PBI: https://en.wikipedia.org/wiki/Banzhaf_power_index
 
 SSI: https://en.wikipedia.org/wiki/Shapley%E2%80%93Shubik_power_index
 
-CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested](http://xn--frankhttner-yhb.de/frankhuettner/wp-content/uploads/2018/05/colsha.pdf) by [André Casajus](http:www.casajus.de) and [Frank Huettner](http:www.frankhuettner.de)
+CSI: [The Coleman-Shapley-Index: Being Decisive Within the Coalition of the Interested](https://www.esmt.org/pub/coleman-shapley-index-being-decisive-within-coalition-interested) by [André Casajus](http:www.casajus.de) and [Frank Huettner](http:www.frankhuettner.de)
 
 ## Installation 
 [Installation guide available on youtube ](https://youtu.be/EiXbVHV78Ik)<a href="https://youtu.be/EiXbVHV78Ik"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/240px-YouTube_Logo_2017.svg.png" align="left" height="18" width="80" target="_blank"></a>
