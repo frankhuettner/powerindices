@@ -143,26 +143,27 @@ def compute_pbi(quota,weights,minimalWinningCoalitionSize=1):
         >>> computePBI(8,[4,4,3,2,1,1])
         [0.5, 0.5, 0.375, 0.125, 0.125, 0.125]
     ''' 
-    n = len(weights)
-    Wsum = sum(weights)    
+    local_weights = weights.copy()
+    n = len(local_weights)
+    Wsum = sum(local_weights)    
     for i in range(n):
-        if weights[i] > Wsum - quota:
-            oldweigth_i = weights[i]
-            weights[i] = Wsum - quota + 1
-            quota = quota - oldweigth_i + weights[i]
+        if local_weights[i] > Wsum - quota:
+            oldweigth_i = local_weights[i]
+            local_weights[i] = Wsum - quota + 1
+            quota = quota - oldweigth_i + local_weights[i]
     PBIfactor = 1/2**(n-1)
     PBIs = []
     if minimalWinningCoalitionSize==1:
-        C = number_coalitions_weighting_x(quota,weights)
+        C = number_coalitions_weighting_x(quota, local_weights)
         for i in range(n):
-            Cwith_i = number_coalitions_weighting_x_including_i(quota,weights,C,i)        
-            PBI = np.sum(Cwith_i[quota:quota+weights[i]])*PBIfactor  
+            Cwith_i = number_coalitions_weighting_x_including_i(quota,local_weights,C,i)        
+            PBI = np.sum(Cwith_i[quota:quota+local_weights[i]])*PBIfactor  
             PBIs.append(PBI) 
     else: 
-        C = number_coalitions_weighting_x_having_size_s(quota,weights)
+        C = number_coalitions_weighting_x_having_size_s(quota,local_weights)
         for i in range(n):
-            Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i)
-            w_i = weights[i]
+            Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,local_weights,C,i)
+            w_i = local_weights[i]
             PBI = 0
             for s in range(minimalWinningCoalitionSize-1,n):
                     PBI += Cwith_i[quota:quota+w_i,s+1].sum(axis=0)            
@@ -177,19 +178,20 @@ def compute_ssi(quota,weights,minimalWinningCoalitionSize=1):
                 list of integers, weights of the committee members
         output, dict, stores the Shapley Shubik index of members with entries (weight: SSI)
     ''' 
-    n = len(weights)
-    Wsum = sum(weights)    
+    local_weights = weights.copy()
+    n = len(local_weights)
+    Wsum = sum(local_weights)    
     for i in range(n):
-        if weights[i] > Wsum - quota:
-            oldweigth_i = weights[i]
-            weights[i] = Wsum - quota + 1
-            quota = quota - oldweigth_i + weights[i]
-    C = number_coalitions_weighting_x_having_size_s(quota,weights)
+        if local_weights[i] > Wsum - quota:
+            oldweigth_i = local_weights[i]
+            local_weights[i] = Wsum - quota + 1
+            quota = quota - oldweigth_i + local_weights[i]
+    C = number_coalitions_weighting_x_having_size_s(quota,local_weights)
     SSIfactors = [ fac(s)*fac(n-s-1)/fac(n) for s in range(n)] 
     SSI = [0]*n
     for i in range(n):
-        w_i = weights[i]
-        Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i)
+        w_i = local_weights[i]
+        Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,local_weights,C,i)
         for s in range(minimalWinningCoalitionSize-1,n):
                 SSI[i] += SSIfactors[s] * Cwith_i[quota:quota+w_i,s+1].sum(axis=0) 
         if minimalWinningCoalitionSize > 1:
@@ -203,21 +205,21 @@ def compute_csi(quota,weights,minimalWinningCoalitionSize=1):
                 list of integers, weights of the committee members
         output, dict, stores the Coleman Shapley index of members with entries (weight: CSI)
     ''' 
-
-    n = len(weights)
-    Wsum = sum(weights)    
+    local_weights = weights.copy()
+    n = len(local_weights)
+    Wsum = sum(local_weights)    
     for i in range(n):
-        if weights[i] > Wsum - quota:
-            oldweigth_i = weights[i]
-            weights[i] = Wsum - quota + 1
-            quota = quota - oldweigth_i + weights[i]
-    C = number_coalitions_weighting_x_having_size_s(quota,weights)
+        if local_weights[i] > Wsum - quota:
+            oldweigth_i = local_weights[i]
+            local_weights[i] = Wsum - quota + 1
+            quota = quota - oldweigth_i + local_weights[i]
+    C = number_coalitions_weighting_x_having_size_s(quota,local_weights)
     CSIfactors =[0]+ [[ fac(n-t)/fac(n)*fac(s+t-1)/fac(s)/2**(s+t-1) \
                         for s in range(n-t+1)] for t in range(1,n+1)]   #[0] is for being able to call t=1,... later
     CSI = [0]*n
     for i in range(n):
-        w_i = weights[i]
-        Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,weights,C,i)
+        w_i = local_weights[i]
+        Cwith_i = number_coalitions_weighting_x_having_size_s_including_i(quota,local_weights,C,i)
         for t in range(minimalWinningCoalitionSize,n+1):
             for s in range(n-t+1):
                 CSI[i] += CSIfactors[t][s] * Cwith_i[quota:quota+w_i,t].sum(axis=0)
